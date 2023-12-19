@@ -8,7 +8,7 @@ class VKAPI
 private:
     std::string token;
     map_ptr id_group;
-    std::unordered_map<std::string, std::string>::iterator CurItem;
+    std::unordered_map<std::string, int>::iterator CurItem;
 
 public:
     VKAPI(std::string _token, unmap &);

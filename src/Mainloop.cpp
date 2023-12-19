@@ -8,14 +8,15 @@ Mainloop::Mainloop(std::string load_to_config)
     while (std::getline(config_file, a))
         config += a;
     nlohmann::json json = nlohmann::json::parse(config);
-    std::unordered_map<std::string, std::string> id_group;
+    std::unordered_map<std::string, int> id_group;
     for (std::string item : json["groups"])
     {
-        id_group.insert({item, ""});
+        id_group.insert({item, 0});
     }
+
     std::string vk_token = json["vktoken"];
     std::string tg_token = json["tgtoken"];
-    std::string channel = json["channel"];
+    long long channel = json["channel"];
     vkapi = new VKAPI(vk_token, id_group);
     tgapi = new TgAPI(tg_token, channel);
 }

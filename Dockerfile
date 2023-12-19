@@ -26,11 +26,11 @@ RUN apt update &&\
     cmake --build . --parallel &&\ 
     cmake --install .
 
-WORKDIR /usr/local/app
+WORKDIR /usr/local/memes-bot
 
 COPY . .
 
 RUN mkdir build && cd build && cmake .. && make 
 
-ENTRYPOINT ["./build/memes-bot"]
 
+ENTRYPOINT [ "./build/memes-bot" ]

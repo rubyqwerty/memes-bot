@@ -6,10 +6,10 @@ class TgAPI
 {
 private:
     std::string token;
-    std::string id_channel;
+    long long id_channel;
     TgBot::Bot *bot;
 
 public:
-    TgAPI(std::string _token, std::string channel);
+    TgAPI(std::string _token, long long channel);
     void SendPost(Post post);
 };

@@ -5,8 +5,10 @@
 #include <nlohmann/json.hpp>
 #include <vector>
 #include <regex>
+#include <string>
+#include <exception>
 
-using unmap = std::unordered_map<std::string, std::string>;
+using unmap = std::unordered_map<std::string, int>;
 using map_ptr = std::unique_ptr<unmap>;
 
 class Post
